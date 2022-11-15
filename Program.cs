@@ -2,13 +2,13 @@
 
 namespace StackProject
 {
-    public class stack
+    public class stack<T>
     {
-        private int[] stackData = new int[10];
+        private T[] stackData = new T[10];
         private const int  STACK_MAX = 10;
         private int stackPtr = 0;
 
-        public void push(int n) {
+        public void push(T n) {
             if (stackPtr < STACK_MAX)
             {
                 stackData[stackPtr] = n;
@@ -26,10 +26,12 @@ namespace StackProject
         static void Main(string[] args)
         {
             Console.WriteLine("Stack attack!");
-            stack myStack = new stack();
+            stack <int> myStack = new stack<int>();
             for (int i = 0; i<11; i++) {
                 myStack.push(i);
             }
+            stack<string> newStack = new stack<string>();
+            newStack.push("Apples");
 
         }
     }
